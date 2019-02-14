@@ -1,7 +1,7 @@
 version: '2'
 services:
-  piota:
+  gclouddevops:
     build: .
     volumes:
-     - ./gcloud-config:/gcloud-config
+     - ./source:/source
     image: gclouddevops
