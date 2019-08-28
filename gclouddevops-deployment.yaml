@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.1.0 (36652f6)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: gclouddevops
+  name: gclouddevops
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: gclouddevops
+    spec:
+      containers:
+      - image: gclouddevops
+        name: gclouddevops
+        resources: {}
+        volumeMounts:
+        - mountPath: /source
+          name: gclouddevops-claim0
+      restartPolicy: Always
+      volumes:
+      - name: gclouddevops-claim0
+        persistentVolumeClaim:
+          claimName: gclouddevops-claim0
+status: {}

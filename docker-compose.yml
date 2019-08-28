@@ -4,4 +4,4 @@ services:
     build: .
     volumes:
      - ./source:/source
-    image: gclouddevops
+    image: piotaapps/gclouddevops
